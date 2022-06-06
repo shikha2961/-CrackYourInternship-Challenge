@@ -27,3 +27,19 @@ public:
 Time Complexity: O(N)
 Space Complexity: O(1)
 */
+
+// Recursive way
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if(head==NULL || head->next==NULL) return head;
+        ListNode* Node = reverseList(head->next);
+        head->next->next = head;
+        head->next = NULL;
+        return Node;
+    }
+};
+/*
+Time Complexity: O(N)
+Space Complexity: O(1)
+*/
